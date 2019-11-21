@@ -1,6 +1,6 @@
 FROM centos:7
 
-LABEL maintainer="technical@brainbeanapps.com"
+LABEL maintainer="infrastructure@brainbeanapps.com"
 
 # Install updates, enable EPEL, install dependencies
 RUN yum -y update && \
@@ -11,7 +11,7 @@ RUN yum -y update && \
 
 # Download and install Google Cloud Directory Sync
 WORKDIR /opt/gcds
-RUN curl -fsSLo /tmp/dirsync-install.sh https://dl-ssl.google.com/dirsync/google/GoogleCloudDirSync_linux_64bit_4_6_4.sh && \
+RUN curl -fsSLo /tmp/dirsync-install.sh https://dl-ssl.google.com/dirsync/google/GoogleCloudDirSync_linux_64bit_4_7_2.sh && \
   chmod +x /tmp/dirsync-install.sh && \
   touch /tmp/dirsync-install.varfile && \
   echo "sys.programGroup.linkDir=/usr/local/bin" >> /tmp/dirsync-install.varfile && \
